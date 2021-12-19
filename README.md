@@ -1,6 +1,5 @@
 # fastapi-ci-example
 <br />
-Build status: 
 [![CI](https://github.com/quadzz/fastapi-ci-example/actions/workflows/main.yml/badge.svg)](https://github.com/quadzz/fastapi-ci-example/actions/workflows/main.yml)
 <br />
 <br />
