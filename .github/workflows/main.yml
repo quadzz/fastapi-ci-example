@@ -35,11 +35,7 @@ jobs:
           run: |
             python -m pip install --upgrade pip
             pip install -r requirements.txt
-            
-      # Starts build process defined in Makefike
-      - id: build
-        run: make build
-        
+
       # Deploy application on Google App Engine
       - id: deploy
         uses: google-github-actions/deploy-appengine@main
