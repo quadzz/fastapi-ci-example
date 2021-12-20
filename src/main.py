@@ -18,8 +18,7 @@ async def math(model: MathRequestModel):
     try:
         operation_result = operations[model.operation](model.number1, model.number2)
         result = MathResultModel(result = operation_result, summary = f"Operation: {model.number1} {model.operation} {model.number2} = {operation_result}")
-        json_data = jsonable_encoder(result)
-        return JSONResponse(content=json_data)
+        return get_json_from_model(result)
     except KeyError as keyErr:
         result = MathResultModel(summary = "Wrong operator selected (" + str(keyErr) + ")!")
         return get_json_from_model(result, 400)
