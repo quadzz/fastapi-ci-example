@@ -11,3 +11,28 @@ This project is to demonstrate FastAPI deployment to Google App Engine from GitH
 * Python 3.7
 * FastAPI 0.70.1
 * gunicorn 20.1.0
+* pytest 6.2.5
+
+## Running locally
+### Main API
+To run the API locally:
+1. Download the required packages:
+```bash
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+2. Run uvicorn:
+```
+uvicorn pymath/main:app --reload
+```
+
+### Unit tests
+1. Download the required packages (if not downloaded before)
+```bash
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+2. Run pytest
+```
+pytest
+```
