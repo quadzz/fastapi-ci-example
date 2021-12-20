@@ -54,3 +54,12 @@ def test_post_math_wrong_operator():
     )
     assert response.status_code == 400
     assert response.json() == { "result": None, "summary": "Wrong operator selected ('asd')!" }
+
+def test_post_math_wrong_division_by_0():
+    response = client.post(
+        "/math/",
+        headers={ "content-type": "application/json" },
+        json={ "number1":"12", "number2":"0", "operation":"/" }
+    )
+    assert response.status_code == 400
+    assert response.json() == { "result": 0.0, "summary": "Error occured: float division by zero" }
